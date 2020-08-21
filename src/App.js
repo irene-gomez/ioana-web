@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useContext } from 'react';
 import './App.css';
+import { FormattedMessage } from 'react-intl';
+import { Context } from './components/Wrapper';
 
 function App() {
+	const context = useContext(Context);
+	const { locale, selectLang } = context;
+
 	return (
 		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
+			<select value={locale} onChange={selectLang}>
+				<option value="en-GB">EN</option>
+				<option value="es-ES">ES</option>
+			</select>
+
+			<ul>
+				<li>
+					<FormattedMessage id="nav.home" defaultMessage="Home" />
+				</li>
+				<li>
+					<FormattedMessage id="nav.about" defaultMessage="About" />
+				</li>
+				<li>
+					<FormattedMessage id="nav.notes" defaultMessage="Notes" />
+				</li>
+				<li>
+					<FormattedMessage id="nav.contact" defaultMessage="Contact" />
+				</li>
+			</ul>
 		</div>
 	);
 }

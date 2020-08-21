@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Ioana Ardelean CI (node.js)
+name: Deploy (node.js)
 
 on:
   # Trigger the workflow on push or pull request,
@@ -23,5 +23,17 @@ jobs:
       with:
         node-version: '12'
     - run: npm ci
-    - run: npm run lint
-    - run: npm run build
+    - name: Lint
+      run: npm run lint
+    - name: Build
+      run: |
+        npm run build
+        mv build docs
+        git add docs/
+    - name: Commit and push
+      run: |
+        git config --global user.email ${{secrets.SECRET_EMAIL}}
+        git config --global user.name ${{secrets.SECRET_NAME}}
+        git remote set-url origin https://${{secrets.PERSONAL_ACCESS_TOKEN}}@github.com/${{secrets.SECRET_NAME}}/${{secrets.SECRET_REPO}}.git
+        git commit -m "Update docs folder"
+        git push origin master

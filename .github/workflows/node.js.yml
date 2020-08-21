@@ -22,6 +22,11 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12'
-    - run: npm ci
-    - run: npm run lint
-    - run: npm run build
+    - run: |
+          npm ci
+          npm run lint
+          npm run build
+          mv build docs
+          git add .
+          git commit -m "Update docs folder"
+          git push origin master

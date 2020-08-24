@@ -1,35 +1,32 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './App.css';
-import { FormattedMessage } from 'react-intl';
-import { Context } from './components/Wrapper';
+import Menu from './components/Menu';
 
-function App() {
-	const context = useContext(Context);
-	const { locale, selectLang } = context;
+const menuOptions = [
+	{
+		id: 'nav.home',
+		defaultMessage: 'Home',
+	},
+	{
+		id: 'nav.about',
+		defaultMessage: 'About',
+	},
+	{
+		id: 'nav.notes',
+		defaultMessage: 'Notes',
+	},
+	{
+		id: 'nav.contact',
+		defaultMessage: 'Contact',
+	},
+];
 
+const App = () => {
 	return (
 		<div className="App">
-			<select value={locale} onChange={selectLang}>
-				<option value="en-GB">EN</option>
-				<option value="es-ES">ES</option>
-			</select>
-
-			<ul>
-				<li>
-					<FormattedMessage id="nav.home" defaultMessage="Home" />
-				</li>
-				<li>
-					<FormattedMessage id="nav.about" defaultMessage="About" />
-				</li>
-				<li>
-					<FormattedMessage id="nav.notes" defaultMessage="Notes" />
-				</li>
-				<li>
-					<FormattedMessage id="nav.contact" defaultMessage="Contact" />
-				</li>
-			</ul>
+			<Menu menuOptions={menuOptions} />
 		</div>
 	);
-}
+};
 
 export default App;

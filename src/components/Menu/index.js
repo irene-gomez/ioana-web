@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import LanguajeSelector from '../LanguajeSelector';
+import LanguageSelector from '../LanguageSelector';
 import './styles.scss';
 
 class Menu extends React.Component {
@@ -31,7 +31,7 @@ class Menu extends React.Component {
 
 		return (
 			<header className="main-header">
-				<LanguajeSelector />
+				<LanguageSelector />
 
 				<div
 					className="menu-btn"

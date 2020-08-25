@@ -6,7 +6,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-weight: normal;
+	font-size: $fontSize;
 }
 
 ul,
@@ -21,7 +21,7 @@ a {
 
 body {
 	font-family: $fontPrincipal;
-	font-size: $fontSize;
 	font-weight: 400;
 	background-color: lightpink;
+	color: $blackRose;
 }

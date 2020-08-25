@@ -21,6 +21,7 @@ a {
 
 body {
 	font-family: $fontPrincipal;
-	font-size: 20px;
+	font-size: $fontSize;
 	font-weight: 400;
+	background-color: lightpink;
 }

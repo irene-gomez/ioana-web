@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import LanguageSelector from '../LanguageSelector';
@@ -45,12 +46,14 @@ class Menu extends React.Component {
 
 				<nav className={`main-nav ${isOpen ? 'is-active' : ''}`}>
 					<ul className="main-nav__list">
-						{menuOptions.map((option, index) => (
+						{menuOptions.map((item, index) => (
 							<li className="main-nav__item" key={index}>
-								<FormattedMessage
-									id={option.id}
-									defaultMessage={option.defaultMessage}
-								/>
+								<Link className="main-nav__link" to={item.route}>
+									<FormattedMessage
+										id={item.id}
+										defaultMessage={item.defaultMessage}
+									/>
+								</Link>
 							</li>
 						))}
 					</ul>

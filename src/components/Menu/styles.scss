@@ -44,9 +44,12 @@
 
 	&__item {
 		text-transform: uppercase;
-		font-weight: 300;
+		margin: 2em 0;
+	}
+
+	&__link {
 		font-size: 1.8rem;
-		margin: 1em 0;
+		font-weight: 300;
 	}
 }
 

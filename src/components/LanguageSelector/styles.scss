@@ -1,0 +1,14 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.lang-selector {
+	@include verticalCentered();
+	display: inline-block;
+	right: 65px;
+	z-index: 20;
+	border: 0;
+	background-color: #f2ecf0;
+	outline: 0;
+	padding: 0.4em;
+	cursor: pointer;
+}

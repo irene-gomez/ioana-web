@@ -1,0 +1,27 @@
+@import './scss/variables';
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: $fontSize;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	font-family: $fontPrincipal;
+	font-weight: 400;
+	background-color: lightpink;
+	color: $blackRose;
+}

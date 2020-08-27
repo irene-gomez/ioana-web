@@ -1,9 +1,12 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 const AboutMe = () => {
 	return (
 		<>
-			<h1>About me</h1>
+			<h1>
+				<FormattedMessage id="nav.about" defaultMessage="About me" />
+			</h1>
 			<p>
 				I dont get it and I dont need to. Morty, can you get to the left nipple?
 				Aw, man! I really liked this life! Well, at least I didnt really crap my

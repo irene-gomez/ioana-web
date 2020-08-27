@@ -1,9 +1,12 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 const Home = () => {
 	return (
 		<>
-			<h1>Home</h1>
+			<h1>
+				<FormattedMessage id="nav.home" defaultMessage="Home" />
+			</h1>
 			<p>
 				I dont get it and I dont need to. Morty, can you get to the left nipple?
 				Aw, man! I really liked this life! Well, at least I didnt really crap my

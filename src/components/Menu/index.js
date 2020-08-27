@@ -32,11 +32,15 @@ class Menu extends React.Component {
 		return (
 			<header className="main-header">
 				<LanguageSelector />
-
-				<div
-					className="menu-btn"
+				<button
+					type="button"
+					className={`menu-btn ${
+						isOpen ? 'menu-btn__close' : 'menu-btn__open'
+					}`}
 					onClick={this.handleClickMenu}
 					aria-hidden="true"
+					aria-label="Abrir menú"
+					tabIndex="-1"
 				/>
 
 				<nav className={`main-nav ${isOpen ? 'is-active' : ''}`}>

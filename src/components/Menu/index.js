@@ -48,7 +48,11 @@ class Menu extends React.Component {
 					<ul className="main-nav__list">
 						{menuOptions.map((item, index) => (
 							<li className="main-nav__item" key={index}>
-								<Link className="main-nav__link" to={item.route}>
+								<Link
+									className="main-nav__link"
+									to={item.route}
+									onClick={this.handleClickMenu}
+								>
 									<FormattedMessage
 										id={item.id}
 										defaultMessage={item.defaultMessage}

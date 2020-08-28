@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import LanguageSelector from '../LanguageSelector';
+// import LanguageSelector from '../LanguageSelector';
 import './styles.scss';
 
 class Menu extends React.Component {
@@ -31,9 +31,10 @@ class Menu extends React.Component {
 		const { isOpen } = this.state;
 
 		return (
-			<header className="main-header">
-				<LanguageSelector />
+			<header className="main-header" data-testid="mainHeader">
+				{/* <LanguageSelector /> */}
 				<button
+					data-testid="menuBtn"
 					type="button"
 					className={`menu-btn ${
 						isOpen ? 'menu-btn__close' : 'menu-btn__open'

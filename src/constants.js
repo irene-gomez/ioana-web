@@ -1,22 +1,22 @@
 const menuOptions = [
 	{
 		id: 'nav.home',
-		defaultMessage: 'Home',
+		defaultMessage: 'nav.home',
 		route: '/',
 	},
 	{
 		id: 'nav.about',
-		defaultMessage: 'About',
+		defaultMessage: 'nav.about',
 		route: 'about-me',
 	},
 	{
 		id: 'nav.notes',
-		defaultMessage: 'Notes',
+		defaultMessage: 'nav.notes',
 		route: '',
 	},
 	{
 		id: 'nav.contact',
-		defaultMessage: 'Contact',
+		defaultMessage: 'nav.contact',
 		route: 'contact',
 	},
 ];

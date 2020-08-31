@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, browserHistory } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
-import { render, getByTestId } from '@testing-library/react';
+import { render, getByTestId, getAllByTestId } from '@testing-library/react';
 import { IntlProvider, FormattedMessage } from 'react-intl';
 import IntlPolyfill from 'intl';
 import menuOptions from './constants';
@@ -42,6 +42,7 @@ describe('Menu component', () => {
 		const { container } = renderWithReactIntl(
 			<Menu menuOptions={menuOptions} />
 		);
+
 		expect(getByTestId(container, 'mainHeader')).toBeTruthy();
 	});
 
@@ -49,13 +50,24 @@ describe('Menu component', () => {
 		const { container } = renderWithReactIntl(
 			<Menu menuOptions={menuOptions} />
 		);
+
 		expect(getByTestId(container, 'menuBtn')).toBeTruthy();
 	});
 
 	test('it should render FormattedMessage and have a "Hello" text', () => {
 		const { container } = renderWithReactIntl(<FormattedMessageView />);
+
 		expect(getByTestId(container, 'message-display')).toHaveTextContent(
 			'Hello'
 		);
+	});
+
+	test('it should render Menu component and check 4 items', () => {
+		const { container } = renderWithReactIntl(
+			<Menu menuOptions={menuOptions} />
+		);
+		const links = getAllByTestId(container, 'linkNav');
+
+		expect(links).toHaveLength(4);
 	});
 });

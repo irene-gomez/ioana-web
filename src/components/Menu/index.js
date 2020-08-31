@@ -50,6 +50,7 @@ class Menu extends React.Component {
 						{menuOptions.map((item, index) => (
 							<li className="main-nav__item" key={index}>
 								<Link
+									data-testid="linkNav"
 									className="main-nav__link"
 									to={item.route}
 									onClick={this.handleClickMenu}

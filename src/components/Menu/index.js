@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-// import LanguageSelector from '../LanguageSelector';
+import LanguageSelector from '../LanguageSelector';
 import './styles.scss';
 
 class Menu extends React.Component {
@@ -32,7 +32,7 @@ class Menu extends React.Component {
 
 		return (
 			<header className="main-header" data-testid="mainHeader">
-				{/* <LanguageSelector /> */}
+				<LanguageSelector />
 				<button
 					data-testid="menuBtn"
 					type="button"
@@ -47,21 +47,22 @@ class Menu extends React.Component {
 
 				<nav className={`main-nav ${isOpen ? 'is-active' : ''}`}>
 					<ul className="main-nav__list">
-						{menuOptions.map((item, index) => (
-							<li className="main-nav__item" key={index}>
-								<Link
-									data-testid="linkNav"
-									className="main-nav__link"
-									to={item.route}
-									onClick={this.handleClickMenu}
-								>
-									<FormattedMessage
-										id={item.id}
-										defaultMessage={item.defaultMessage}
-									/>
-								</Link>
-							</li>
-						))}
+						{menuOptions &&
+							menuOptions.map((item, index) => (
+								<li className="main-nav__item" key={index}>
+									<Link
+										data-testid="linkNav"
+										className="main-nav__link"
+										to={item.route}
+										onClick={this.handleClickMenu}
+									>
+										<FormattedMessage
+											id={item.id}
+											defaultMessage={item.defaultMessage}
+										/>
+									</Link>
+								</li>
+							))}
 					</ul>
 				</nav>
 			</header>

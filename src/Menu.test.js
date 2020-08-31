@@ -6,6 +6,7 @@ import { render, getByTestId, getAllByTestId } from '@testing-library/react';
 import { IntlProvider, FormattedMessage } from 'react-intl';
 import IntlPolyfill from 'intl';
 import menuOptions from './constants';
+import Wrapper from './components/Wrapper';
 import Menu from './components/Menu';
 
 const setupTests = () => {
@@ -39,16 +40,26 @@ setupTests();
 // eslint-disable-next-line no-undef
 describe('Menu component', () => {
 	test('it should exists header component', () => {
-		const { container } = renderWithReactIntl(
-			<Menu menuOptions={menuOptions} />
+		const { container } = render(
+			<Router history={browserHistory}>
+				<Menu menuOptions={menuOptions} />
+			</Router>,
+			{
+				wrapper: Wrapper,
+			}
 		);
 
 		expect(getByTestId(container, 'mainHeader')).toBeTruthy();
 	});
 
 	test('it should exists menu button', () => {
-		const { container } = renderWithReactIntl(
-			<Menu menuOptions={menuOptions} />
+		const { container } = render(
+			<Router history={browserHistory}>
+				<Menu menuOptions={menuOptions} />
+			</Router>,
+			{
+				wrapper: Wrapper,
+			}
 		);
 
 		expect(getByTestId(container, 'menuBtn')).toBeTruthy();
@@ -63,8 +74,13 @@ describe('Menu component', () => {
 	});
 
 	test('it should render Menu component and check 4 items', () => {
-		const { container } = renderWithReactIntl(
-			<Menu menuOptions={menuOptions} />
+		const { container } = render(
+			<Router history={browserHistory}>
+				<Menu menuOptions={menuOptions} />
+			</Router>,
+			{
+				wrapper: Wrapper,
+			}
 		);
 		const links = getAllByTestId(container, 'linkNav');
 

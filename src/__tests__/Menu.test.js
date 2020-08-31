@@ -4,9 +4,9 @@ import { BrowserRouter as Router, browserHistory } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 import { render, getByTestId, getAllByTestId } from '@testing-library/react';
 import { IntlProvider, FormattedMessage } from 'react-intl';
-import menuOptions from './constants';
-import Wrapper from './components/Wrapper';
-import Menu from './components/Menu';
+import menuOptions from '../constants';
+import Wrapper from '../components/Wrapper';
+import Menu from '../components/Menu';
 
 const renderWithReactIntl = (component) => {
 	return render(

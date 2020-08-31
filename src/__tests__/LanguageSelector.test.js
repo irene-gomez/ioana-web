@@ -2,8 +2,8 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render, getByTestId } from '@testing-library/react';
-import Wrapper from './components/Wrapper';
-import LanguageSelector from './components/Menu';
+import Wrapper from '../components/Wrapper';
+import LanguageSelector from '../components/Menu';
 
 // eslint-disable-next-line no-undef
 describe('<LanguageSelector />', () => {

@@ -31,9 +31,10 @@ class Menu extends React.Component {
 		const { isOpen } = this.state;
 
 		return (
-			<header className="main-header">
+			<header className="main-header" data-testid="mainHeader">
 				<LanguageSelector />
 				<button
+					data-testid="menuBtn"
 					type="button"
 					className={`menu-btn ${
 						isOpen ? 'menu-btn__close' : 'menu-btn__open'
@@ -46,20 +47,22 @@ class Menu extends React.Component {
 
 				<nav className={`main-nav ${isOpen ? 'is-active' : ''}`}>
 					<ul className="main-nav__list">
-						{menuOptions.map((item, index) => (
-							<li className="main-nav__item" key={index}>
-								<Link
-									className="main-nav__link"
-									to={item.route}
-									onClick={this.handleClickMenu}
-								>
-									<FormattedMessage
-										id={item.id}
-										defaultMessage={item.defaultMessage}
-									/>
-								</Link>
-							</li>
-						))}
+						{menuOptions &&
+							menuOptions.map((item, index) => (
+								<li className="main-nav__item" key={index}>
+									<Link
+										data-testid="linkNav"
+										className="main-nav__link"
+										to={item.route}
+										onClick={this.handleClickMenu}
+									>
+										<FormattedMessage
+											id={item.id}
+											defaultMessage={item.defaultMessage}
+										/>
+									</Link>
+								</li>
+							))}
 					</ul>
 				</nav>
 			</header>
@@ -68,7 +71,7 @@ class Menu extends React.Component {
 }
 
 Menu.propTypes = {
-	menuOptions: PropTypes.arrayOf(PropTypes.object).isRequired,
+	menuOptions: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Menu;

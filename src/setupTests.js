@@ -3,3 +3,18 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect';
+
+// import IntlPolyfill from 'intl';
+// import 'intl/locale-data/jsonp/en';
+
+// const setupTests = () => {
+// 	// https://formatjs.io/guides/runtime-environments/#server
+// 	if (global.Intl) {
+// 		Intl.NumberFormat = IntlPolyfill.NumberFormat;
+// 		Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
+// 	} else {
+// 		global.Intl = IntlPolyfill;
+// 	}
+// };
+
+// setupTests();

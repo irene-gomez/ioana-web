@@ -18,5 +18,6 @@ module.exports = {
 		'react/jsx-indent': 'off',
 		'react/jsx-indent-props': 'off',
 		'react/no-array-index-key': 'warn',
+		'react/require-default-props': 'off',
 	},
 };

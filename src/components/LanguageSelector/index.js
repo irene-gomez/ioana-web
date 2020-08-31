@@ -7,7 +7,12 @@ const LanguageSelector = () => {
 	const { locale, selectLang } = context;
 
 	return (
-		<select className="lang-selector" value={locale} onChange={selectLang}>
+		<select
+			className="lang-selector"
+			value={locale}
+			onChange={selectLang}
+			data-testid="selectLanguage"
+		>
 			<option value="en-GB">EN</option>
 			<option value="es-ES">ES</option>
 		</select>

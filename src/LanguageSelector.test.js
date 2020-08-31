@@ -2,21 +2,8 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render, getByTestId } from '@testing-library/react';
-import IntlPolyfill from 'intl';
 import Wrapper from './components/Wrapper';
 import LanguageSelector from './components/Menu';
-
-const setupTests = () => {
-	// https://formatjs.io/guides/runtime-environments/#server
-	if (global.Intl) {
-		Intl.NumberFormat = IntlPolyfill.NumberFormat;
-		Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
-	} else {
-		global.Intl = IntlPolyfill;
-	}
-};
-
-setupTests();
 
 // eslint-disable-next-line no-undef
 describe('<LanguageSelector />', () => {
@@ -24,6 +11,20 @@ describe('<LanguageSelector />', () => {
 		const { container } = render(<LanguageSelector />, { wrapper: Wrapper });
 		const select = getByTestId(container, 'selectLanguage');
 
+		expect(select).toBeTruthy();
+	});
+
+	test('it should contain the text "EN"', () => {
+		const { container } = render(<LanguageSelector />, { wrapper: Wrapper });
+		const select = getByTestId(container, 'selectLanguage');
+
 		expect(select).toHaveTextContent('EN');
+	});
+
+	test('it should contain the text "ES"', () => {
+		const { container } = render(<LanguageSelector />, { wrapper: Wrapper });
+		const select = getByTestId(container, 'selectLanguage');
+
+		expect(select).toHaveTextContent('ES');
 	});
 });

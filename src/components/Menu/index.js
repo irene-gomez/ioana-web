@@ -71,7 +71,7 @@ class Menu extends React.Component {
 }
 
 Menu.propTypes = {
-	menuOptions: PropTypes.arrayOf(PropTypes.object).isRequired,
+	menuOptions: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Menu;

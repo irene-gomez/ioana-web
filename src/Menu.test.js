@@ -4,20 +4,9 @@ import { BrowserRouter as Router, browserHistory } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 import { render, getByTestId, getAllByTestId } from '@testing-library/react';
 import { IntlProvider, FormattedMessage } from 'react-intl';
-import IntlPolyfill from 'intl';
 import menuOptions from './constants';
 import Wrapper from './components/Wrapper';
 import Menu from './components/Menu';
-
-const setupTests = () => {
-	// https://formatjs.io/guides/runtime-environments/#server
-	if (global.Intl) {
-		Intl.NumberFormat = IntlPolyfill.NumberFormat;
-		Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
-	} else {
-		global.Intl = IntlPolyfill;
-	}
-};
 
 const renderWithReactIntl = (component) => {
 	return render(
@@ -35,10 +24,8 @@ const FormattedMessageView = () => {
 	);
 };
 
-setupTests();
-
 // eslint-disable-next-line no-undef
-describe('Menu component', () => {
+describe('<Menu />', () => {
 	test('it should exists header component', () => {
 		const { container } = render(
 			<Router history={browserHistory}>

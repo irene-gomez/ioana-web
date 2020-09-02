@@ -24,7 +24,6 @@ const FormattedMessageView = () => {
 	);
 };
 
-// eslint-disable-next-line no-undef
 describe('<Menu />', () => {
 	test('it should exists header component', () => {
 		const { container } = render(

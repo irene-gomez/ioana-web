@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import LanguageSelector from '../LanguageSelector';
 import './styles.scss';
+import Logo from '../Logo';
 
 class Menu extends React.Component {
 	constructor(props) {
@@ -32,6 +33,7 @@ class Menu extends React.Component {
 
 		return (
 			<header className="main-header" data-testid="mainHeader">
+				<Logo />
 				<LanguageSelector />
 				<button
 					data-testid="menuBtn"

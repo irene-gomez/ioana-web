@@ -1,0 +1,18 @@
+@import '../../scss/variables';
+
+.logo {
+	display: inline;
+	font-family: $fontSecondary;
+	font-size: 1.2rem;
+	font-weight: 400;
+	align-self: center;
+	padding-left: 15px;
+
+	&::after {
+		display: block;
+		content: '';
+		height: 1px;
+		width: 17px;
+		background-color: $blackRose;
+	}
+}

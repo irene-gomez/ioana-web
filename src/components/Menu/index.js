@@ -33,7 +33,7 @@ function Menu({ menuOptions }) {
 									data-testid="linkNav"
 									className="main-nav__link"
 									to={item.route}
-									onClick={() => setIsMenuOpen(!isMenuOpen)}
+									onClick={() => setIsMenuOpen(false)}
 								>
 									<FormattedMessage
 										id={item.id}

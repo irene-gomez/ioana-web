@@ -1,12 +1,10 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import TitleSection from '../TitleSection';
 
 const Home = () => {
 	return (
 		<>
-			<h1>
-				<FormattedMessage id="nav.home" defaultMessage="Home" />
-			</h1>
+			<TitleSection id="nav.home" message="Home" />
 			<p>
 				I dont get it and I dont need to. Morty, can you get to the left nipple?
 				Aw, man! I really liked this life! Well, at least I didnt really crap my

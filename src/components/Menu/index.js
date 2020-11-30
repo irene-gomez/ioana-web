@@ -12,7 +12,6 @@ function Menu({ menuOptions }) {
 	return (
 		<header className="main-header" data-testid="mainHeader">
 			<Logo />
-			<LanguageSelector />
 			<button
 				data-testid="menuBtn"
 				type="button"
@@ -45,6 +44,7 @@ function Menu({ menuOptions }) {
 						))}
 				</ul>
 			</nav>
+			<LanguageSelector />
 		</header>
 	);
 }

@@ -3,6 +3,7 @@
 
 .lang-selector {
 	@include verticalCentered();
+	height: 40px;
 	display: inline-block;
 	right: 65px;
 	z-index: 20;
@@ -11,4 +12,16 @@
 	outline: 0;
 	padding: 0.4em;
 	cursor: pointer;
+
+	@media all and (min-width: $desktop) {
+		position: static;
+		top: 0;
+		transform: translateY(0);
+		margin-right: 25px;
+		border: 0;
+		background-color: #f2ecf0;
+		outline: 0;
+		padding: 0.4em;
+		cursor: pointer;
+	}
 }

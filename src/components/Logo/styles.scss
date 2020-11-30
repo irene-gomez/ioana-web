@@ -8,6 +8,10 @@
 	align-self: center;
 	padding-left: 15px;
 
+	@media all and (min-width: $desktop) {
+		padding-left: 25px;
+	}
+
 	&::after {
 		display: block;
 		content: '';

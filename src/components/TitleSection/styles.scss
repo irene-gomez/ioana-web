@@ -1,0 +1,9 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.main-title {
+	font-size: 2rem;
+	margin-bottom: 0.7em;
+	font-family: $fontTitle;
+	color: $greyRose;
+}

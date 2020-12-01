@@ -2,19 +2,8 @@
 @import '../../scss/mixins';
 
 .main-title {
-	font-size: 1.5rem;
-	text-transform: uppercase;
-	margin-bottom: 0.6em;
-	text-align: center;
-	position: relative;
-	background-color: red;
-
-	&::after {
-		display: block;
-		content: '';
-		@include absoluteCentered();
-		height: 2px;
-		width: 100%;
-		background-color: $pinkPeony;
-	}
+	font-size: 2rem;
+	margin-bottom: 0.7em;
+	font-family: $fontTitle;
+	color: $greyRose;
 }

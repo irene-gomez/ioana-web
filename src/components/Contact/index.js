@@ -12,7 +12,11 @@ const Contact = () => {
 				<FormattedMessage id="contact.info" defaultMessage="contact.info" />
 			</p>
 
-			<form className="form" action="/">
+			<form
+				className="form"
+				action="https://formspree.io/f/xgepqjgk"
+				method="POST"
+			>
 				<div className="form__item">
 					<label className="form__label" htmlFor="completeName">
 						<FormattedMessage id="contact.name" defaultMessage="contact.name" />
